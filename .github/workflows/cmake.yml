@@ -1,0 +1,15 @@
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2 
+    - run: sudo apt-get update && sudo apt-get install -y libgtest-dev
+    - run: rm -rf build
+      working-directory: set
+    - run: mkdir build
+      working-directory: set
+    - run: cmake ..
+      working-directory: set/build
+    - run: cmake --build .
+      working-directory: set/build
