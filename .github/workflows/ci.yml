@@ -10,6 +10,6 @@ jobs:
     - run: clang-tidy search/**/* -- || true
     - run: sudo apt-get update && sudo apt-get install -y libgtest-dev
     - run: chmod +x test.sh && ./test.sh
-    #- run: sudo apt-get update && sudo apt-get install -y valgrind 
-    #- run: valgrind --tool=memcheck --leak-check=yes ./search
-    #  working-directory: search/build
+    - run: sudo apt-get update && sudo apt-get install -y valgrind 
+    - run: valgrind --tool=memcheck --leak-check=yes ./search
+      working-directory: search/build
