@@ -13,3 +13,5 @@ jobs:
       working-directory: set/build
     - run: cmake --build .
       working-directory: set/build
+    - run: ./tests/test_set
+      working-directory: set/build
